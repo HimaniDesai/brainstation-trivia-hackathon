@@ -10,3 +10,28 @@
 .body {
     background-color: #f2d9b5;
 }
+
+
+.quiz__question--name{
+    font-size: large;
+    display: flex;
+    justify-content: center;
+}
+
+.quiz__option--one, .quiz__option--two, .quiz__option--three, .quiz__option--four{
+    font-size: small;
+    justify-content: center;
+    margin: 0 auto;
+    width: 80%;
+    text-align: center;
+}
+
+.quiz__option--one:hover,
+.quiz__option--two:hover,
+.quiz__option--three:hover,
+.quiz__option--four:hover {
+    font-size: small;
+    justify-content: center;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 4px rgba(0,0,0,0.1);
+}
