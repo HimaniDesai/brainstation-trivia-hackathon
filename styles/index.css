@@ -1,38 +1,39 @@
+/*# sourceMappingURL=index.css.map */
 * {
-  box-sizing: border-box;
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-  margin: 0;
-}
-
-.header {
-  text-align: center;
-}
-
-.category-container {
-  display: flex;
-  flex-direction: row;
-  overflow: scroll;
-}
-.category__name {
-  width: 100%;
-}
-
-.quiz__tagline {
-  text-align: center;
-  font-size: 1.5rem;
-}
-.quiz__question--name {
-  font-size: 1rem;
-  font-weight: bold;
-}
-.quiz__default {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.quiz__option--one, .quiz__option--two, .quiz__option--three, .quiz__option--four {
-  font-size: 1rem;
-  background-color: grey;
-  width: 50%;
-}/*# sourceMappingURL=index.css.map */
+    box-sizing: border-box;
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+    margin: 0;
+  }
+  
+  .header {
+    text-align: center;
+  }
+  
+  .category-container {
+    display: flex;
+    flex-direction: row;
+    overflow: scroll;
+  }
+  .category__name {
+    width: 100%;
+  }
+  
+  .quiz__tagline {
+    text-align: center;
+    font-size: 1.5rem;
+  }
+  .quiz__question--name {
+    font-size: 1rem;
+    font-weight: bold;
+  }
+  .quiz__default {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .quiz__option--one, .quiz__option--two, .quiz__option--three, .quiz__option--four {
+    font-size: 1rem;
+    background-color: grey;
+    width: 50%;
+  }/*# sourceMappingURL=index.css.map */
