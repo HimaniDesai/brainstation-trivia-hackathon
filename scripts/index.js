@@ -1,14 +1,13 @@
-categories = ["General Knowledge", "Entertainment:Books",];
-
-let defaultContainer = document.querySelector(".category-container");
+const categories = ["General Knowledge", "Entertainment:Books",];
 
 for (let i=0; i< categories.length; i++) {
+    let categoryContainer = document.querySelector(".category-container");
     let categoryElement = document.createElement("h2");
     categoryElement.classList.add("category_name");
 
-    categoryElement.innerText = categories[i]["category"];
+    categoryElement.innerText = categories[i];
 
-    defaultContainer.appendChild(categoryElement);
+    categoryContainer.appendChild(categoryElement);
 }
 
 function displayQuestions(arr) {
