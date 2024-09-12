@@ -155,7 +155,7 @@ function displayQuestions(arr, categoryName) {
 
     let question = document.createElement("h2");
     question.classList.add("quiz__question--name");
-    question.innerText = i + 1 + "\t" + arr[i]["question"];
+    question.innerText = i + 1 + ".\t" + arr[i]["question"];
     defaultContainer.appendChild(question);
     let choice = "";
     let option1 = document.createElement("button");

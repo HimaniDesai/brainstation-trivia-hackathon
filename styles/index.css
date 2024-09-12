@@ -87,9 +87,10 @@ body {
 .quiz__question--name {
   font-size: 1rem;
   font-weight: bold;
-  padding: 2rem 0;
+  padding: 2rem 1rem;
   background-color: rgb(124, 56, 192);
   border-radius: 1em;
+  width: 50%;
 }
 @media screen and (min-width: 1280px) {
   .quiz__question--name {
