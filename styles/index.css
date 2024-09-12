@@ -1,3 +1,13 @@
+@font-face {
+  font-family: "FascinateInline";
+  src: url("../assets/fonts/FascinateInline-Regular.ttf") format("truetype");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "FascinateInline";
+  src: url("../assets/fonts/RibeyeMarrow-Regular.ttf") format("truetype");
+  font-weight: 400;
+}
 * {
   box-sizing: border-box;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
@@ -5,8 +15,19 @@
   background-color: lightsalmon;
 }
 
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  background-color: lightsalmon;
+}
+
 .header {
   text-align: center;
+  width: 100%;
 }
 
 .category-container {
@@ -64,16 +85,28 @@
   font-size: 1.5rem;
 }
 .quiz__question--name {
-  font-size: 2rem;
+  font-size: 1rem;
   font-weight: bold;
   padding: 2rem 0;
-  background-color: pink;
+  background-color: rgb(124, 56, 192);
+  border-radius: 1em;
+}
+@media screen and (min-width: 1280px) {
+  .quiz__question--name {
+    font-size: 2rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .quiz__question--name {
+    font-size: 2rem;
+  }
 }
 .quiz__default {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  font-size: 2rem;
 }
 .quiz__submit {
   width: 50%;
@@ -81,6 +114,7 @@
   padding: 2rem 0;
   background-color: black;
   color: white;
+  border-radius: 1em;
 }
 .quiz__option--one, .quiz__option--two, .quiz__option--three, .quiz__option--four {
   font-size: 1rem;
@@ -90,18 +124,21 @@
   padding: 1rem 0;
   margin: 0.5rem 0;
   text-align: center;
+  border-radius: 1em;
 }
 .quiz__option--one:hover, .quiz__option--two:hover, .quiz__option--three:hover, .quiz__option--four:hover {
   background-color: gray;
 }
 .quiz__option--one:active, .quiz__option--one:focus, .quiz__option--two:active, .quiz__option--two:focus, .quiz__option--three:active, .quiz__option--three:focus, .quiz__option--four:active, .quiz__option--four:focus {
-  background-color: red;
+  background-color: rgb(51, 200, 125);
 }
 
 .dropdown {
   position: relative;
   width: 200px;
   color: blue;
+  margin: 2rem;
+  background-color: lightsalmon;
 }
 
 .select {
@@ -149,4 +186,8 @@
 
 .list-open {
   display: block;
+}
+
+.selected {
+  background-color: white;
 }/*# sourceMappingURL=index.css.map */
