@@ -104,27 +104,31 @@ for (let i = 0; i < categories.length; i++) {
 
     categoryElement.innerText = categories[i].name;
 
+    // Pass category name and ID to the getQuiz function
     categoryElement.addEventListener('click', () => {
-        triviaQuizApi.getQuiz(categories[i].id);
+        triviaQuizApi.getQuiz(categories[i].id, categories[i].name);
     });
 
     categoryContainer.appendChild(categoryElement);
 }
 
-function displayQuestions(arr) {
+function displayQuestions(arr, categoryName) {
+    // Clear previous content
     let commentContainer = document.querySelector(".quiz__default-quiz");
+    commentContainer.innerHTML = "";  // Clear previous questions
 
     let defaultContainer = document.createElement("div");
     defaultContainer.classList.add("quiz__default");
-    defaultContainer.innerText="Science:Mathematcis"
+
+    // Set the category name dynamically
+    defaultContainer.innerText = `${categoryName}`;
     commentContainer.appendChild(defaultContainer);
 
     for (let i = 0; i < arr.length; i++) {
-        
         let question = document.createElement("button");
         question.classList.add("quiz__question--name");
         question.innerText = arr[i]["question"];
-        defaultContainer.appendChild(question);  
+        defaultContainer.appendChild(question);
     }
 }
 
@@ -133,13 +137,15 @@ class TriviaQuizApi {
         this.baseUrl = "https://opentdb.com/api.php?amount=10&category=";
     }
 
-    async getQuiz(categoryId) {
+    // Accept both categoryId and categoryName
+    async getQuiz(categoryId, categoryName) {
         try {
             const response = await axios.get(`${this.baseUrl}${categoryId}&type=multiple`);
             const quiz = response.data;
-            displayQuestions(quiz.results);
+            // Pass the category name to displayQuestions
+            displayQuestions(quiz.results, categoryName);
         } catch (error) {
-            console.error('Error fetching comments:', error);
+            console.error('Error fetching quiz:', error);
         }
     }
 }
