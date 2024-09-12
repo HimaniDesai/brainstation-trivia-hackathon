@@ -9,77 +9,13 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js" defer></script>
     <script src="./scripts/index.js" defer></script>
     <script type="module" src="./styles/index.css" defer></script>
+    <link rel="stylesheet" href="./styles/index.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <style>
-        /* Simple styling for dropdown */
-        .dropdown {
-            position: relative;
-            width: 200px;
-        }
-
-        .select {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            cursor: pointer;
-            padding: 10px;
-            background-color: #fff;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
-
-        .caret {
-            width: 0;
-            height: 0;
-            border-left: 5px solid transparent;
-            border-right: 5px solid transparent;
-            border-top: 5px solid #333;
-            transition: transform 0.3s ease;
-        }
-
-        .select-clicked .caret {
-            transform: rotate(180deg);
-        }
-
-        .category-list {
-            list-style: none;
-            padding: 0;
-            margin: 5px 0 0;
-            max-height: 200px;
-            overflow-y: auto;
-            border: 1px solid #ddd;
-            background-color: #fff;
-            position: absolute;
-            width: 100%;
-            display: none;
-            z-index: 100;
-        }
-
-        .list-open {
-            display: block;
-        }
-
-        .category-list li {
-            padding: 10px;
-            cursor: pointer;
-        }
-
-        .category-list li.active {
-            background-color: #ddd;
-        }
-
-        .category-list li:hover {
-            background-color: #f1f1f1;
-        }
-    </style>
+  
 </head>
 
-<body class="body">
-    <h1 class="header">
-        <div class="title">Hackathon Trivia</div>
-    </h1>
-    
+
 <body>
     <h1 class="header">Hackathon Trivia</h1>
     <div class="dropdown">
@@ -92,7 +28,6 @@
 <div class="quiz__default-quiz"></div>
     <section class="quiz">
         <h2 class="quiz__tagline">Welcome to the Hackathon Trivia! Lets make it a Quiztacular day!</h2>
-        <a href="./quiz.html" class="quiz__button">Read! Set! Trivia-go!</a>
     </section>
     <div class="category-container"></div>
     <div class="quiz__default-quiz"></div>

@@ -17,6 +17,52 @@
   &__name {
     width: 100%;
   }
+  &-list {
+    list-style: none;
+    padding: 0;
+    margin: 5px 0 0;
+    max-height: 200px;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    position: absolute;
+    width: 100%;
+    display: none;
+    z-index: 100;
+  }
+
+  &-list,
+  li {
+    padding: 10px;
+    cursor: pointer;
+  }
+
+  &-list,
+  li.active {
+    background-color: #ddd;
+  }
+
+  &-list,
+  li:hover {
+    background-color: #f1f1f1;
+  }
+
+  .category-list li {
+    padding: 10px;
+    cursor: pointer;
+  }
+
+  .category-list li.active {
+    background-color: #ddd;
+  }
+
+  .category-list li:hover {
+    background-color: #f1f1f1;
+  }
+}
+
+.list-open {
+  display: block;
 }
 
 .quiz {
@@ -42,4 +88,56 @@
     background-color: grey;
     width: 50%;
   }
+}
+
+.dropdown {
+  position: relative;
+  width: 200px;
+}
+
+.select {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.caret {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #333;
+  transition: transform 0.3s ease;
+}
+
+.select {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  &-clicked .caret {
+    transform: rotate(180deg);
+  }
+}
+
+.caret {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #333;
+  transition: transform 0.3s ease;
+}
+
+.list-open {
+  display: block;
 }
