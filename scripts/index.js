@@ -97,30 +97,45 @@ const categories = [
     }
 ];
 
-for (let i = 0; i < categories.length; i++) {
-    let categoryContainer = document.querySelector(".category-container");
-    let categoryElement = document.createElement("button");
-    categoryElement.classList.add("category_name");
+const dropdown = document.querySelector('.dropdown');
+const select = dropdown.querySelector('.select');
+const caret = dropdown.querySelector('.caret');
+const categoryList = dropdown.querySelector('.category-list');
+const selected = dropdown.querySelector('.selected');
 
-    categoryElement.innerText = categories[i].name;
+categories.forEach(category => {
+    const li = document.createElement('li');
+    li.innerText = category.name;
+    categoryList.appendChild(li);
 
-    // Pass category name and ID to the getQuiz function
-    categoryElement.addEventListener('click', () => {
-        triviaQuizApi.getQuiz(categories[i].id, categories[i].name);
+    li.addEventListener('click', async () => {
+        selected.innerText = category.name;
+
+        await triviaQuizApi.getQuiz(category.id, category.name);
+
+        select.classList.remove('select-clicked');
+        caret.classList.remove('caret-rotate');
+        categoryList.classList.remove('list-open');
+
+        const options = dropdown.querySelectorAll('.category-list li');
+        options.forEach(option => option.classList.remove('active'));
+        li.classList.add('active');
     });
+});
 
-    categoryContainer.appendChild(categoryElement);
-}
+select.addEventListener('click', () => {
+    select.classList.toggle('select-clicked');
+    caret.classList.toggle('caret-rotate');
+    categoryList.classList.toggle('list-open');
+});
 
 function displayQuestions(arr, categoryName) {
-    // Clear previous content
     let commentContainer = document.querySelector(".quiz__default-quiz");
-    commentContainer.innerHTML = "";  // Clear previous questions
+    commentContainer.innerHTML = "";
 
     let defaultContainer = document.createElement("div");
     defaultContainer.classList.add("quiz__default");
 
-    // Set the category name dynamically
     defaultContainer.innerText = `${categoryName}`;
     commentContainer.appendChild(defaultContainer);
 
@@ -137,12 +152,11 @@ class TriviaQuizApi {
         this.baseUrl = "https://opentdb.com/api.php?amount=10&category=";
     }
 
-    // Accept both categoryId and categoryName
     async getQuiz(categoryId, categoryName) {
         try {
             const response = await axios.get(`${this.baseUrl}${categoryId}&type=multiple`);
             const quiz = response.data;
-            // Pass the category name to displayQuestions
+
             displayQuestions(quiz.results, categoryName);
         } catch (error) {
             console.error('Error fetching quiz:', error);
