@@ -13,6 +13,7 @@
     display: flex;
     flex-direction: row;
     overflow: scroll;
+    flex: 1;
   }
   &__name {
     width: 100%;
@@ -73,6 +74,7 @@
   &__question--name {
     font-size: 1rem;
     font-weight: bold;
+    padding: 2rem 0;
   }
   &__default {
     display: flex;
@@ -85,14 +87,18 @@
   &__option--three,
   &__option--four {
     font-size: 1rem;
-    background-color: grey;
+    background-color: rgb(73, 91, 250);
     width: 50%;
+    padding: 1rem 0;
+    margin: 0.5rem 0;
+    text-align: center;
   }
 }
 
 .dropdown {
   position: relative;
   width: 200px;
+  color: blue;
 }
 
 .select {
