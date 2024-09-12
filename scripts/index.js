@@ -130,18 +130,24 @@ select.addEventListener('click', () => {
 });
 
 function displayQuestions(arr, categoryName) {
+    // Clear previous content
     let commentContainer = document.querySelector(".quiz__default-quiz");
-    commentContainer.innerHTML = "";
+    commentContainer.innerHTML = "";  // Clear previous questions
 
     let defaultContainer = document.createElement("div");
     defaultContainer.classList.add("quiz__default");
 
+    // Set the category name dynamically
     defaultContainer.innerText = `${categoryName}`;
     commentContainer.appendChild(defaultContainer);
-
+    const answers_array=[];
+    const selected_answers=[];
     for (let i = 0; i < arr.length; i++) {
-
+        
         let correct_answer=arr[i]["correct_answer"];
+        
+        answers_array[i]=correct_answer;
+        console.log(answers_array);
         let options = arr[i]["incorrect_answers"];
         options.push(correct_answer);
         console.log(options);
@@ -152,31 +158,79 @@ function displayQuestions(arr, categoryName) {
         question.classList.add("quiz__question--name");
         question.innerText = (i+1)+ "\t" + arr[i]["question"];
         defaultContainer.appendChild(question);
-
-        let option1 = document.createElement("h2");
+        let choice = "";
+        let option1 = document.createElement("button");
         option1.classList.add("quiz__option--one");
-        option1.innerText = options[random];
+        let data1=options[random];
+        option1.innerText = data1;
         random = (random+1)%4;
-        defaultContainer.appendChild(option1); 
+        defaultContainer.appendChild(option1);
+        option1.addEventListener('click', () => {
+            // choice=data1;
+            selected_answers[i]=data1;
+            console.log(selected_answers);
+        },true);
 
-        let option2 = document.createElement("h2");
+        let option2 = document.createElement("button");
         option2.classList.add("quiz__option--two");
-        option2.innerText = options[random];
+        let data2=options[random];
+        option2.innerText = data2;
         random = (random+1)%4;
-        defaultContainer.appendChild(option2); 
+        defaultContainer.appendChild(option2);
+        option2.addEventListener('click', () => {
+            selected_answers[i]=data2;
+            console.log(selected_answers);
+            // choice=data2;
+            // ifClicked=true;
+        },true); 
 
-        let option3 = document.createElement("h2");
+        let option3 = document.createElement("button");
         option3.classList.add("quiz__option--three");
-        option3.innerText = options[random];
+        let data3=options[random];
+        option3.innerText = data3;
         random = (random+1)%4;
-        defaultContainer.appendChild(option3); 
+        defaultContainer.appendChild(option3);
+        option3.addEventListener('click', () => {
+            selected_answers[i]=data3;
+            console.log(selected_answers);
+            // choice=data3;
+            // ifClicked=true;
+        },true); 
 
-        let option4 = document.createElement("h2");
+        let option4 = document.createElement("button");
         option4.classList.add("quiz__option--four");
-        option4.innerText = options[random];
+        let data4=options[random];
+        option4.innerText = data4;
         random = (random+1)%4;
-        defaultContainer.appendChild(option4); 
+        defaultContainer.appendChild(option4);
+        option4.addEventListener('click', () => {
+            selected_answers[i]=data4;
+            console.log(selected_answers);
+            // choice=data4;
+            // ifClicked=true;
+        },true); 
+        console.log(selected_answers);
+
     }
+    let submit = document.createElement("button");
+    submit.classList.add("quiz__submit");
+    submit.innerText = "SUBMIT QUIZ";
+    defaultContainer.appendChild(submit);
+    submit.addEventListener('click', () => {
+        total=0;
+        for(let i = 0; i < answers_array.length; i++){
+            if (answers_array[i]==selected_answers[i]){
+                total+=1;
+            }
+        }
+        let score = document.createElement("h2");
+        score.classList.add("quiz__score");
+        score.innerText = "Your Score is " +total;
+        defaultContainer.appendChild(score);
+        console.log("Score"+total);
+    },true); 
+    console.log(selected_answers);
+
 }
 
 class TriviaQuizApi {
