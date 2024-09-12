@@ -1,12 +1,152 @@
-/*# sourceMappingURL=index.css.map */
-
-
-.header{
-    margin-top: 2rem;
-    display: flex;
-    justify-content: center;
+* {
+  box-sizing: border-box;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  margin: 0;
+  background-color: lightsalmon;
 }
 
-.body {
-    background-color: #f2d9b5;
+.header {
+  text-align: center;
 }
+
+.category-container {
+  display: flex;
+  flex-direction: row;
+  overflow: scroll;
+  flex: 1;
+}
+.category__name {
+  width: 100%;
+}
+.category-list {
+  list-style: none;
+  padding: 0;
+  margin: 5px 0 0;
+  max-height: 200px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  position: absolute;
+  width: 100%;
+  display: none;
+  z-index: 100;
+}
+.category-list,
+.category li {
+  padding: 10px;
+  cursor: pointer;
+}
+.category-list,
+.category li.active {
+  background-color: #ddd;
+}
+.category-list,
+.category li:hover {
+  background-color: #f1f1f1;
+}
+.category .category-list li {
+  padding: 10px;
+  cursor: pointer;
+}
+.category .category-list li.active {
+  background-color: #ddd;
+}
+.category .category-list li:hover {
+  background-color: #f1f1f1;
+}
+
+.list-open {
+  display: block;
+}
+
+.quiz__tagline {
+  text-align: center;
+  font-size: 1.5rem;
+}
+.quiz__question--name {
+  font-size: 2rem;
+  font-weight: bold;
+  padding: 2rem 0;
+  background-color: pink;
+}
+.quiz__default {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.quiz__submit {
+  width: 50%;
+  margin: 2rem 0;
+  padding: 2rem 0;
+  background-color: black;
+  color: white;
+}
+.quiz__option--one, .quiz__option--two, .quiz__option--three, .quiz__option--four {
+  font-size: 1rem;
+  background-color: rgb(73, 91, 250);
+  color: white;
+  width: 50%;
+  padding: 1rem 0;
+  margin: 0.5rem 0;
+  text-align: center;
+}
+.quiz__option--one:hover, .quiz__option--two:hover, .quiz__option--three:hover, .quiz__option--four:hover {
+  background-color: gray;
+}
+.quiz__option--one:active, .quiz__option--one:focus, .quiz__option--two:active, .quiz__option--two:focus, .quiz__option--three:active, .quiz__option--three:focus, .quiz__option--four:active, .quiz__option--four:focus {
+  background-color: red;
+}
+
+.dropdown {
+  position: relative;
+  width: 200px;
+  color: blue;
+}
+
+.select {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.caret {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #333;
+  transition: transform 0.3s ease;
+}
+
+.select {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+.select-clicked .caret {
+  transform: rotate(180deg);
+}
+
+.caret {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #333;
+  transition: transform 0.3s ease;
+}
+
+.list-open {
+  display: block;
+}/*# sourceMappingURL=index.css.map */
