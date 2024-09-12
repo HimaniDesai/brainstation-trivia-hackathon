@@ -2,6 +2,7 @@
   box-sizing: border-box;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   margin: 0;
+  background-color: lightsalmon;
 }
 
 .header {
@@ -63,9 +64,10 @@
   font-size: 1.5rem;
 }
 .quiz__question--name {
-  font-size: 1rem;
+  font-size: 2rem;
   font-weight: bold;
   padding: 2rem 0;
+  background-color: pink;
 }
 .quiz__default {
   display: flex;

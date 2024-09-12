@@ -239,8 +239,8 @@ function displayQuestions(arr, categoryName) {
           total += 1;
         }
       }
-      let score = document.createElement("h2");
-      score.classList.add("quiz__score");
+      let score = document.querySelector(".quiz__score");
+      score.innerHTML = "";
       score.innerText = "Your Score is " + total;
       defaultContainer.appendChild(score);
       console.log("Score" + total);
