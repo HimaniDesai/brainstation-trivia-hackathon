@@ -140,10 +140,42 @@ function displayQuestions(arr, categoryName) {
     commentContainer.appendChild(defaultContainer);
 
     for (let i = 0; i < arr.length; i++) {
-        let question = document.createElement("button");
+
+        let correct_answer=arr[i]["correct_answer"];
+        let options = arr[i]["incorrect_answers"];
+        options.push(correct_answer);
+        console.log(options);
+        let random = Math.floor(Math.random() * 4);
+        console.log(random);
+
+        let question = document.createElement("h2");
         question.classList.add("quiz__question--name");
-        question.innerText = arr[i]["question"];
+        question.innerText = (i+1)+ "\t" + arr[i]["question"];
         defaultContainer.appendChild(question);
+
+        let option1 = document.createElement("h2");
+        option1.classList.add("quiz__option--one");
+        option1.innerText = options[random];
+        random = (random+1)%4;
+        defaultContainer.appendChild(option1); 
+
+        let option2 = document.createElement("h2");
+        option2.classList.add("quiz__option--two");
+        option2.innerText = options[random];
+        random = (random+1)%4;
+        defaultContainer.appendChild(option2); 
+
+        let option3 = document.createElement("h2");
+        option3.classList.add("quiz__option--three");
+        option3.innerText = options[random];
+        random = (random+1)%4;
+        defaultContainer.appendChild(option3); 
+
+        let option4 = document.createElement("h2");
+        option4.classList.add("quiz__option--four");
+        option4.innerText = options[random];
+        random = (random+1)%4;
+        defaultContainer.appendChild(option4); 
     }
 }
 

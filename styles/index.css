@@ -1,1 +1,12 @@
 /*# sourceMappingURL=index.css.map */
+
+
+.header{
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+.body {
+    background-color: #f2d9b5;
+}
